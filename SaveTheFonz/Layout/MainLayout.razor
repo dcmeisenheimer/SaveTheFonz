@@ -1,0 +1,37 @@
+﻿@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
+
+<div class="site-layout">
+    <div class="main-container">
+        @* Header *@
+        <div class="header-container">
+            <span class="site-title">SAVETHEFONZ.COM</span>
+        </div>
+        <hr class="header-divider" />
+
+        @* Navigation *@
+        <nav class="nav-container">
+            <a href="/" class="@GetNavClass("/")">ABOUT</a>
+            <a href="/video" class="@GetNavClass("/video")">VIDEO</a>
+            <a href="/purchase" class="@GetNavClass("/purchase")">PURCHASE</a>
+            <a href="/contact" class="@GetNavClass("/contact")">CONTACT</a>
+        </nav>
+
+        @* Page Content *@
+        <main>
+            @Body
+        </main>
+    </div>
+</div>
+
+@code {
+    private string GetNavClass(string path)
+    {
+        var currentPath = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
+        if (string.IsNullOrEmpty(currentPath)) currentPath = "/";
+        else currentPath = "/" + currentPath;
+
+        bool isActive = currentPath.Equals(path, StringComparison.OrdinalIgnoreCase);
+        return isActive ? "nav-link nav-link-active" : "nav-link";
+    }
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SAVETHEFONZ.COM</title>
+    <base href="/" />
+    <link rel="preload" id="webassembly" />
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link href="SaveTheFonz.styles.css" rel="stylesheet" />
+    <script type="importmap"></script>
+    <style>
+        #app {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #000000;
+            color: #FFFFFF;
+            font-family: Arial, Helvetica, sans-serif;
+            opacity: 1;
+            transition: opacity 0.15s ease-out;
+        }
+
+        .loading-title {
+            font-family: 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 900;
+            font-size: 3.5rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            transform: skewX(-8deg);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .loading-title {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .loading-title {
+                font-size: 1.5rem;
+                letter-spacing: 1px;
+            }
+        }
+
+        .loading-text {
+            font-size: 1rem;
+            color: #888888;
+            margin-bottom: 1.5rem;
+        }
+
+        .loading-bar-container {
+            width: 200px;
+            height: 3px;
+            background-color: #333333;
+        }
+
+        .loading-bar {
+            height: 100%;
+            background-color: #4FC3F7;
+            animation: loading 1.5s ease-in-out infinite;
+        }
+
+        @keyframes loading {
+            0% {
+                width: 0%;
+            }
+
+            50% {
+                width: 70%;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        #blazor-error-ui {
+            background-color: #111111;
+            color: #FFFFFF;
+            padding: 1rem 2rem;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            display: none;
+            font-family: Arial, Helvetica, sans-serif;
+            border-top: 1px solid #333333;
+        }
+
+            #blazor-error-ui .reload {
+                color: #4FC3F7;
+                margin-left: 1rem;
+            }
+
+            #blazor-error-ui .dismiss {
+                cursor: pointer;
+                margin-left: 1.5rem;
+                color: #888888;
+            }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="loading-title">SAVETHEFONZ.COM</div>
+        <div class="loading-text">Loading...</div>
+        <div class="loading-bar-container">
+            <div class="loading-bar"></div>
+        </div>
+    </div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="." class="reload">Reload</a>
+        <span class="dismiss">🗙</span>
+    </div>
+    <script src="_framework/blazor.webassembly#[.{fingerprint}].js"></script>
+</body>
+
+</html>
