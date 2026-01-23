@@ -11,10 +11,10 @@
 
         @* Navigation *@
         <nav class="nav-container">
-            <a href="/" class="@GetNavClass("/")">ABOUT</a>
-            <a href="/video" class="@GetNavClass("/video")">VIDEO</a>
-            <a href="/purchase" class="@GetNavClass("/purchase")">PURCHASE</a>
-            <a href="/contact" class="@GetNavClass("/contact")">CONTACT</a>
+            <NavLink href="" class="nav-link" ActiveClass="nav-link-active" Match="NavLinkMatch.All">ABOUT</NavLink>
+            <NavLink href="video" class="nav-link" ActiveClass="nav-link-active">VIDEO</NavLink>
+            <NavLink href="purchase" class="nav-link" ActiveClass="nav-link-active">PURCHASE</NavLink>
+            <NavLink href="contact" class="nav-link" ActiveClass="nav-link-active">CONTACT</NavLink>
         </nav>
 
         @* Page Content *@
