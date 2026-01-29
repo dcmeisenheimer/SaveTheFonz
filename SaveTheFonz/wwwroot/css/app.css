@@ -220,38 +220,23 @@
 }
 
 /* ===== VIDEO PAGE ===== */
-.video-placeholder {
-    width: 380px;
-    height: 320px;
-    background: linear-gradient(to bottom, #b8e0f0 0%, #87CEEB 50%, #7cb342 50%, #558b2f 75%, #33691e 100%);
-    border-radius: 0;
-    position: relative;
-    overflow: hidden;
+/* ===== VIDEO PAGE ===== */
+.video-container {
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9;
 }
 
-    .video-placeholder::before {
-        content: '';
-        position: absolute;
-        top: 15%;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100px;
-        height: 60px;
-        background-color: #FFFFFF;
-        border-radius: 50%;
+    .video-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
     }
 
-/* Tablet and mobile */
 @media (max-width: 768px) {
-    .video-placeholder {
-        width: 300px;
-        height: 260px;
+    .video-container {
+        max-width: 100%;
     }
-
-        .video-placeholder::before {
-            width: 80px;
-            height: 50px;
-        }
 }
 
 /* ===== PURCHASE PAGE ===== */
@@ -300,6 +285,12 @@
     font-size: 1.1rem;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-email:hover {
+    color: #4FC3F7;
 }
 
 /* ===== GENERAL / LAYOUT ===== */
